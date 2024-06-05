@@ -7,14 +7,13 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 
 :menu
 cls
-echo. 
-echo.
-echo.
-echo.
-echo.
-echo.    here ascii art batRE
-echo.
-echo.
+echo.                      ######  ####### 
+echo.  #####    ##   ##### #     # #
+echo.  #    #  #  #    #   #     # # 
+echo.  #####  #    #   #   ######  ##### 
+echo.  #    # ######   #   #   #   # 
+echo.  #    # #    #   #   #    #  # 
+echo.  #####  #    #   #   #     # ####### 
 echo.
 echo.
 echo. please chose an option : 
