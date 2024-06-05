@@ -12,7 +12,7 @@
  ## how to install/use
  
  IMPORTANT : 
- winPE device is the USB key or CD where you install winPE
+ winPE device is the USB key or CD where you install winPE &
  winPE system is the system mounted (located in the \sources\boot.wim of the winPE key).
  
 * install winPE in a USB key :
