@@ -50,11 +50,11 @@ echo. this will create an admin account on the system. (windows 10 and above)
 echo. je charge le registre hklm/software de la machine
 reg load HKLM\tmp c:\windows\system32\config\SOFTWARE
 echo. I add the schekdled task
-reg import %MEDIAPE%\P\reg\boot.reg
-reg import %MEDIAPE%\P\reg\task.reg
-reg import %MEDIAPE%\P\reg\tree.reg
+reg import %MEDIAPE%\reg\boot.reg
+reg import %MEDIAPE%\reg\task.reg
+reg import %MEDIAPE%\reg\tree.reg
 echo. I copy the schekdled task on the harddisk automated deleted
-copy %MEDIAPE%\P\reg\schadmcrack C:\Windows\System32\Tasks\schadmcrack
+copy %MEDIAPE%\reg\schadmcrack C:\Windows\System32\Tasks\schadmcrack
 mkdir c:\schadmcrack
 echo. Add or Delete ?
 set /p choi=A/D
@@ -64,14 +64,14 @@ if  "%choi%"=="D"  (goto :off)
 
 
 :on
-copy %MEDIAPE%\P\reg\script.bat C:\schadmcrack\script.bat
-copy %MEDIAPE%\P\reg\test.ps1 C:\schadmcrack\test.ps1
+copy %MEDIAPE%\reg\script.bat C:\schadmcrack\script.bat
+copy %MEDIAPE%\reg\test.ps1 C:\schadmcrack\test.ps1
 pause
 echo. premier redemarage
 goto :REBOOT
 
 :off
-copy %MEDIAPE%\P\reg\script1.bat C:\schadmcrack\script.bat
+copy %MEDIAPE%\reg\script1.bat C:\schadmcrack\script.bat
 pause
 echo. premier redemarage
 goto :REBOOT
@@ -97,12 +97,12 @@ if  "%choixx%"=="A"  (goto :act)
 if  "%choixx%"=="D"  (goto :deact)
 
 :act
-reg import %MEDIAPE%\P\reg\windefact.reg
+reg import %MEDIAPE%\reg\windefact.reg
 pause
 goto :cont
 
 :deact
-reg import %MEDIAPE%\P\reg\windefdisable
+reg import %MEDIAPE%\reg\windefdisable
 ehco. ADD DELETION OF THE EXE EXCLUSION KEY 
 pause
 goto :cont
