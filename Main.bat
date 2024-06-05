@@ -24,7 +24,7 @@ echo.
 echo.
 echo. please chose an option : 
 echo. dump  = dump sam and system files, in order to crack passwords offline
-echo. admin = create an admin account
+echo. impersonate = impersonate task in order to create an admin account
 echo. bypass_pass = exange cmd.exe and magnify.exe to open a cmd with autorite NT/system account with a locked computer
 echo. bypass_pass_end = revert the exange of cmd.exe and magnify.exe
 echo. windef = deactivation/activation of windows defender (add an exclusion for *.exe)
@@ -33,7 +33,7 @@ echo. reboot = reboot the computer (if no options are chose, we reboot the compu
 set /p choix= :
 
 if  "%choix%"=="dump"  (goto :A)
-if  "%choix%"=="admin"  (goto :B)
+if  "%choix%"=="impersonate"  (goto :B)
 if  "%choix%"=="bypass_pass"  (goto :C)
 if  "%choix%"=="bypass_pass_end"  (goto :D)
 if  "%choix%"=="windef"  (goto :E)
