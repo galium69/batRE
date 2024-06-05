@@ -91,19 +91,18 @@ pause
 :E
 echo. I load the register hklm/software of the local system
 reg load HKLM\tmp c:\windows\system32\config\SOFTWARE
-echo. activate or déactivate ?
+echo. add the .exe exclusion or delete ?
 set /p choixx=A/D
-if  "%choixx%"=="A"  (goto :act)
+if  "%choixx%"=="A"  (goto :add)
 if  "%choixx%"=="D"  (goto :deact)
 
-:act
-reg import %MEDIAPE%\reg\windefact.reg
+:add
+reg import %MEDIAPE%\reg\windefext
 pause
 goto :cont
 
-:deact
-reg import %MEDIAPE%\reg\windefdisable
-ehco. ADD DELETION OF THE EXE EXCLUSION KEY 
+:delete
+reg delete "HKLM\tmp\Microsoft\Windows Defender\Exclusions\Extensions" /v exe
 pause
 goto :cont
 
