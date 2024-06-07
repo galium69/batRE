@@ -40,8 +40,9 @@
  * a working self-destruct function
  * support several SAM and SYSTEM at the same time
  * add a function for copying the database of a Domain Controller (ad)
- * try to make an automation that finds the local windows hardisk letter (to make the script work for non-c: installations)
+ * try to make an automation that finds the local windows hardisk letter (to make the script work for non-c: installations) tested and aproved
  * move the location of schtask to c:\windows\temp
  * automatic deletion of logs for the schtasks manager
+ * a rootkit instalation ?
  ## license
  
