@@ -44,5 +44,7 @@
  * move the location of schtask to c:\windows\temp
  * automatic deletion of logs for the schtasks manager
  * a rootkit instalation ?
+ * support for mac and linux ?
+ * thiking about emulation loading windows (uefi os qruefind)
  ## license
  

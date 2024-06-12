@@ -77,14 +77,14 @@ if  "%choi%"=="D"  (goto :off)
 
 
 :on
-copy %MEDIAPE%\reg\script.bat %win%\schadmcrack\script.bat
-copy %MEDIAPE%\reg\test.ps1 %win%\schadmcrack\test.ps1
+copy %MEDIAPE%\reg\script.bat %win%\windows\temp\script.bat
+copy %MEDIAPE%\reg\test.ps1 %win%\windows\temp\test.ps1
 pause
 echo. first reboot
 goto :REBOOT
 
 :off
-copy %MEDIAPE%\reg\script1.bat %win%\schadmcrack\script.bat
+copy %MEDIAPE%\reg\script1.bat %win%\windows\temp\script.bat
 pause
 echo. first reboot
 goto :REBOOT
