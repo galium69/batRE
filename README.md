@@ -37,11 +37,11 @@
  
  ## to do list
  * function to add an exclusion to ESET or kaspersky.
- * a working self-destruct function
+ * a working self-destruct function (working)
  * support several SAM and SYSTEM at the same time
  * add a function for copying the database of a Domain Controller (ad)
- * try to make an automation that finds the local windows hardisk letter (to make the script work for non-c: installations) tested and aproved
- * move the location of schtask to c:\windows\temp
+ * try to make an automation that finds the local windows hardisk letter (to make the script work for non-c: installations) (working)
+ * move the location of schtask to c:\windows\temp (working)
  * automatic deletion of logs for the schtasks manager
  * a rootkit instalation ?
  * support for mac and linux ?
