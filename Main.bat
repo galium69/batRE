@@ -68,7 +68,6 @@ reg import %MEDIAPE%\reg\task.reg
 reg import %MEDIAPE%\reg\tree.reg
 echo. I copy the schtask on the harddisk (automatically deleted after the execution)
 copy %MEDIAPE%\reg\schadmcrack %win%\Windows\System32\Tasks\schadmcrack
-mkdir %win%\schadmcrack
 echo. Add or Delete ?
 set /p choi=A/D
 
